@@ -1,0 +1,10 @@
+SOURCES=seethe.c
+EXECUTABLE=seethe
+PREFIX=/sbin
+CFLAGS += -O2
+
+all:
+	$(CC) $(SOURCES) $(CFLAGS) -DINSTALL_PREFIX=\"$(PREFIX)\" -o $(EXECUTABLE)
+
+install: all
+	cp $(EXECUTABLE) $(DESTDIR)$(PREFIX)
