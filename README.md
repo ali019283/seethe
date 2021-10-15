@@ -18,6 +18,6 @@ to install
 
 dont forget to run 
 ```
-# mkdir /etc
+# cd /etc
 # git clone https://github.com/ali019283/seethe-scripts
 ```
