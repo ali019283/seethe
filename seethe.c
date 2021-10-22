@@ -4,7 +4,7 @@
 #include<unistd.h>
 enum halt{
 	REBOOT=1,
-	POWEROFF
+	POWEROFF=2
 };
 void sig_handle(int signal, void (*handler)(int)){
     struct sigaction sa;
