@@ -1,10 +1,7 @@
-SOURCES=seethe.c
-EXECUTABLE=seethe
-PREFIX=/sbin
-CFLAGS += -O2
-
+CFLAGS += -O2 -pipe
 all:
-	$(CC) $(SOURCES) $(CFLAGS) -DINSTALL_PREFIX=\"$(PREFIX)\" -o $(EXECUTABLE)
-
+	$(CC) seethe.c $(CFLAGS) -o seethe
+	$(CC) smanager.c $(CFLAGS) -o sman
 install: all
-	cp $(EXECUTABLE) $(DESTDIR)$(PREFIX)
+	cp seethe /sbin
+	cp sman /usr/bin
