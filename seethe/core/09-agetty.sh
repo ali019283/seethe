@@ -1,1 +1,0 @@
-/sbin/agetty tty1
