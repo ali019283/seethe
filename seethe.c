@@ -13,7 +13,7 @@ int main(int argc, char *argv[]){
 	pid_t pid = fork();
 	if (pid == 0){execv("/etc/seethe/1", &argv[0]);}
 	sig_handle(SIGRTMIN+1, restart);
-	sig_handle(SIGRTMIN+1, poweroff);
+	sig_handle(SIGRTMIN+2, poweroff);
 	while(1) {pause();}
 	return 0;
 }
