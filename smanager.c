@@ -3,10 +3,6 @@
 #include<string.h>
 #include<unistd.h>
 #include<signal.h>
-enum halt{
-	REBOOT=1,
-	POWEROFF
-};
 int main(int argc, const char *argv[]){
 	if (argc < 3) exit(1);
 	for (int i = 0; i < argc; i++){
@@ -22,8 +18,8 @@ int main(int argc, const char *argv[]){
 				symlink(a, c);
 			}
 		}
-		else if (!strcmp(argv[i], "reboot")){kill(1, SIGRTMIN+REBOOT);}
-		else if (!strcmp(argv[i], "poweroff")){kill(1, SIGRTMIN+POWEROFF);}
+		else if (!strcmp(argv[i], "reboot")){kill(1, SIGRTMIN+1);}
+		else if (!strcmp(argv[i], "poweroff")){kill(1, SIGRTMIN+2);}
 	}
 	exit(0);
 }
