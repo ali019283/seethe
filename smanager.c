@@ -14,6 +14,6 @@ int main(int argc, const char *argv[]){
 		}
 	}
 	else if (!strcmp(argv[1], "reboot")){kill(1, SIGRTMIN+1);}
-	else if (!strcmp(argv[1], "poweroff")){kill(1, SIGRTMIN+1);}
+	else if (!strcmp(argv[1], "poweroff")){kill(1, SIGRTMIN+2);}
 	exit(0);
 }
