@@ -4,7 +4,7 @@
 #include<unistd.h>
 #include<signal.h>
 int main(int argc, const char *argv[]){
-	if (argc < 3) exit(1);
+	if (argc < 2) exit(1);
 	for (int i = 0; i < argc; i++){
 		if (!strcmp(argv[i], "enable")) {
 			for (int b = i+1; b < argc; b++){
