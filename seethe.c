@@ -3,9 +3,9 @@
 #include<sys/reboot.h>  
 #include<unistd.h>
 void sig_handle(int signal, void (*handler)(int)){
-    struct sigaction sa;
-    sa.sa_handler = handler;
-    sigaction(signal, &sa, NULL);
+	struct sigaction sa;
+	sa.sa_handler = handler;
+	sigaction(signal, &sa, NULL);
 }
 void poweroff(){reboot(RB_POWER_OFF);}
 void restart(){reboot(RB_AUTOBOOT);}
