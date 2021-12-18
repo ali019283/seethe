@@ -11,8 +11,9 @@ int main(int argc, const char *argv[]){
 				if (!strcmp(argv[b], "reboot") || !strcmp(argv[b], "poweroff")){i = b; break;}
 				if (!strcmp(argv[b], "disable")){
 					for (int b = i+1; b < argc; b++){
-						snprintf(c, 277, "/etc/seethe/runlevel/%s", argv[b]);
-						unlink(c);
+						char c[277];
+						snprintf(c, 277, "/etc/seethe/runlevel/%s", argv[b]); 
+						unlink(c); break;
 					}
 				}
 				char a[277], c[277];
