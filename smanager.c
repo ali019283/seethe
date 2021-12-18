@@ -6,7 +6,7 @@
 int main(int argc, const char *argv[]){
 	if (argc < 2){puts("It needs some flags to work properly, unfortunately this program can't understand what you want by mind reading."); exit(1);}
 	for (int i = 0; i < argc; i++){
-		if (!strcmp(argv[i], "enable")) {
+		if (!strcmp(argv[i], "enable")){
 			for (int b = i+1; b < argc; b++){
 				if (!strcmp(argv[b], "reboot") || !strcmp(argv[b], "poweroff" || !strcmp(argv[b], "disable")){i = b; break;}
 				char a[277], c[277];
