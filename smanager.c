@@ -8,18 +8,18 @@ int main(int argc, const char *argv[]){
 	for (int i = 0; i < argc; i++){
 		if (!strcmp(argv[i], "enable")) {
 			for (int b = i+1; b < argc; b++){
-				if (!strcmp(argv[b], "reboot") || !strcmp(argv[b], "poweroff")){i = b; break;}
-				if (!strcmp(argv[b], "disable")){
-					for (int b = i+1; b < argc; b++){
-						char c[277];
-						snprintf(c, 277, "/etc/seethe/runlevel/%s", argv[b]); 
-						unlink(c); break;
-					}
-				}
+				if (!strcmp(argv[b], "reboot") || !strcmp(argv[b], "poweroff" || !strcmp(argv[b], "disable")){i = b; break;}
 				char a[277], c[277];
 				snprintf(a, 277, "/etc/seethe/services/%s", argv[b]);
 				snprintf(c, 277, "/etc/seethe/runlevel/%s", argv[b]);
 				symlink(a, c);
+			}
+		}
+		if (!strcmp(argv[i], "disable")){
+			for (int n = i+1; n < argc; n++){
+				char c[277];
+				snprintf(c, 277, "/etc/seethe/runlevel/%s", argv[b]); 
+				unlink(c); break;
 			}
 		}
 		else if (!strcmp(argv[i], "reboot")){kill(1, SIGRTMIN+1);}
