@@ -3,6 +3,17 @@ seethe is a minimal init system, that barely works.
 
 dont expect much out of it, it may lack some important features and it may have bugs.
 
+# how to use
+```
++-------------------------------------------------------------------+
+| -> sman           [enable|disable {service}|reboot|poweroff]...   |
+| -> enable         Enable given service                            |
+| -> disable        Disable given service                           |
+| -> reboot         Reboot                                          |
+| -> poweroff       poweroff                                        |
++-------------------------------------------------------------------+
+```
+
 # installing / compiling
 run 
 ```
