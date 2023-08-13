@@ -30,6 +30,5 @@ to install
 dont forget to run 
 ```
 # cd /etc
-# git clone https://github.com/ali019283/seethe-scripts
-# mv seethe-scripts seethe
+# git clone https://github.com/ali019283/seethe-scripts seethe
 ```
