@@ -56,6 +56,7 @@ int main(int argc, const char *argv[]){
 				sleep(1);
 				printf("%d...\n", s);
 			}
+			puts("rebooting");
 			kill(1, SIGRTMIN+1);
 		}
 		else if (!strcmp(argv[i], "poweroff")){
