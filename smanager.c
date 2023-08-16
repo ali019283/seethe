@@ -9,20 +9,20 @@ int main(int argc, const char *argv[]){
 	for (int i = 1; i < argc; i++){
 		if (!strcmp(argv[i], "enable")){
 			if (i+1==argc){puts("enable: too few arguments for 'enable'");}
-			for (int b = i+1; b < argc; b++){
-				if (!strcmp(argv[b], "reboot") || !strcmp(argv[b], "poweroff") || !strcmp(argv[b], "disable")){
+			for (int n = i+1; n < argc; n++){
+				if (!strcmp(argv[n], "reboot") || !strcmp(argv[n], "poweroff") || !strcmp(argv[n], "disable")){
 					if(!strcmp(argv[i],"enable")){
 						puts("enable: too few arguments for 'enable'");
 					}
-					i = b - 1;	 
+					i = n - 1;	 
 					break;
-				}i = b;
+				}i = n;
 				char a[277], c[277];
-				snprintf(a, 277, "/etc/seethe/services/%s", argv[b]);
-				snprintf(c, 277, "/etc/seethe/runlevel/%s", argv[b]);
-				if (!access(a, F_OK)) {printf("enable: enabling service %s...\n", argv[b]);}
-				else {printf("enable: '%s' could not be found\n", argv[b]); continue;}
-				if (!access(c, F_OK)) {printf("enable: '%s' already enabled, enabling again...\n", argv[b]);}
+				snprintf(a, 277, "/etc/seethe/services/%s", argv[n]);
+				snprintf(c, 277, "/etc/seethe/runlevel/%s", argv[n]);
+				if (!access(a, F_OK)) {printf("enable: enabling service %s...\n", argv[n]);}
+				else {printf("enable: '%s' could not be found\n", argv[n]); continue;}
+				if (!access(c, F_OK)) {printf("enable: '%s' already enabled, enabling again...\n", argv[n]);}
 				symlink(a, c);
 			}
 		}
@@ -34,7 +34,7 @@ int main(int argc, const char *argv[]){
 						puts("disable: too few arguments for 'disable'");
 						break;
 					} 
-					i = n-1;
+					i = n - 1;
 					break;
 				}i = n;
 				char c[277];
